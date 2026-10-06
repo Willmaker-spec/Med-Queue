@@ -1,16 +1,39 @@
-# React + Vite
+# Med-Queue
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A frontend-based virtual queue management platform that helps patients find clinics, join queues remotely, and track their waiting status in real time.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Find and browse clinics
+- View department queues
+- Join a virtual queue
+- Receive a digital queue number
+- Track queue position
+- View estimated waiting time
+- Patient dashboard
+- Clinic staff dashboard
+- Waiting-room display
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- JavaScript
+- HTML
+- CSS / Tailwind CSS
+- LocalStorage
 
-## Expanding the ESLint configuration
+## Team
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Member 1 — Home & UI
+- Member 2 — Clinics
+- Member 3 — Queue System
+- Member 4 — Patient Dashboard
+- Member 5 — Staff Dashboard
+
+## Project Goal
+
+To demonstrate how a digital queue system can improve the patient experience by allowing users to monitor their position without physically standing in a queue.
+
+## Disclaimer
+
+MedQueue is a frontend prototype created for educational purposes. It does not provide medical advice or connect to real hospital systems.
