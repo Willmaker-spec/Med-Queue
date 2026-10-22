@@ -1,4 +1,4 @@
-export const mockupClinics = [
+export const clinicDirectory = [
   {
     id: "general-hospital",
     name: "General Hospital",

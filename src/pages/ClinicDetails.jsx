@@ -1,35 +1,40 @@
 import { Link, useParams } from "react-router-dom";
-import { clinics } from "../data/clinics";
+import { Footer, Header } from "../components/MedQueueLayout.jsx";
+import { clinicDirectory } from "../data/medqueueClinics.js";
 
 function ClinicDetails() {
   const { id } = useParams();
-  const clinic = clinics.find((item) => String(item.id) === id);
+  const clinic = clinicDirectory.find((item) => item.id === id);
 
   if (!clinic) {
     return (
-      <main>
-        <h1>Clinic not found</h1>
-        <Link to="/clinics">Back to clinics</Link>
-      </main>
+      <>
+        <Header />
+        <main className="shell main-content">
+          <h1 className="page-title">Clinic not found</h1>
+          <Link className="text-link" to="/clinics">Back to clinics</Link>
+        </main>
+        <Footer />
+      </>
     );
   }
 
   return (
-    <main>
-      <Link to="/clinics">Back to clinics</Link>
-      <h1>{clinic.name}</h1>
-      <p>{clinic.location}</p>
-      <h2>Departments</h2>
-      <ul>
-        {clinic.departments.map((department) => (
-          <li key={department.id}>
-            <h3>{department.name}</h3>
-            <p>Now serving: {department.nowServing}</p>
-            <p>People waiting: {department.waiting}</p>
-          </li>
-        ))}
-      </ul>
-    </main>
+    <>
+      <Header />
+      <main className="shell main-content">
+        <Link className="text-link" to="/clinics">← Back to clinics</Link>
+        <div className="card clinic-detail">
+          <div className="detail-photo photo" style={{ backgroundImage: `url("${clinic.image}")` }} />
+          <span className="eyebrow"><span className="eyebrow-dot" />{clinic.status}</span>
+          <h1 className="page-title">{clinic.name}</h1>
+          <p className="page-subtitle">{clinic.specialties} · {clinic.address}</p>
+          <p>Open today {clinic.hours}. Current average wait is about {clinic.wait} minutes.</p>
+          <Link className="btn btn-primary" to="/queue">Join this clinic's queue →</Link>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }
 

@@ -187,7 +187,6 @@ h3 { font-size: 15px; margin-bottom: 5px; letter-spacing: -.15px; }
 .serving-num { padding: 12px; margin-top: 11px; border-radius: 9px; background: #f2f9f6; text-align: center; }
 .serving-num strong { display: block; color: var(--green); font: 800 24px "Manrope",sans-serif; }
 .serving-num span { color: var(--body); font-size: 10px; }
-.demo-note { display: flex; align-items: start; gap: 8px; padding: 10px 12px; border: 1px solid #f2e4c2; border-radius: 9px; background: #fffaf0; color: #906a2a; font-size: 10px; line-height: 1.45; }
 .queue-footer { margin-top: 27px; }
 
 /* Patient / staff dashboards */
@@ -340,8 +339,8 @@ h3 { font-size: 15px; margin-bottom: 5px; letter-spacing: -.15px; }
 .avatar-tone-pink { background: #f8e6ed; color: #a34d6c; }
 .avatar-tone-blue { background: #e2effb; color: #3d6f9d; }
 .footer-tail { float: right; }
-.mockup-clinic-detail { max-width: 760px; padding: 20px; margin: 22px auto; }
-.mockup-clinic-detail .detail-photo { height: 260px; margin: 0 0 20px; }
+.clinic-detail { max-width: 760px; padding: 20px; margin: 22px auto; }
+.clinic-detail .detail-photo { height: 260px; margin: 0 0 20px; }
 
 @media (max-width: 640px) {
   .queue-actions { align-items: stretch; flex-direction: column; }
@@ -349,6 +348,6 @@ h3 { font-size: 15px; margin-bottom: 5px; letter-spacing: -.15px; }
   .table-toolbar { flex-direction: column; }
   .table-toolbar .staff-tools { width: 100%; }
   .patient-search { flex: 1; }
-  .mockup-clinic-detail .detail-photo { height: 190px; }
+  .clinic-detail .detail-photo { height: 190px; }
   .footer-tail { float: none; display: block; margin-top: 5px; }
 }
