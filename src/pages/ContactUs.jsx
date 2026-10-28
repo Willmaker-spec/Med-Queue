@@ -1,56 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./ContactUs.css";
 
-const ContactUs = () => {
+function ContactUs() {
+  const [successMessage, setSuccessMessage] = useState("");
+  // 1. Define the initial blank state for the form inputs
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  // 2. Track changes as the user types
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value, // key assignment matching the input's "name" attribute
+    }));
+  };
+
+  // 3. Handle data when the "SEND MESSAGE" button is clicked
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Process form data here (e.g., API call to backend, Firebase, EmailJS, etc.)
+    console.log("Submitted Form Data:", formData);
+
+    setSuccessMessage(
+      `Thank you ${formData.name}, your message has been sent successfully!`,
+    );
+
+    // Reset form inputs after successful submission
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+  };
+
   return (
     <div className="contact-page">
       {/* HEADER */}
       <header className="page-header">
         <div className="header-content">
           <div className="breadcrumb">
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
             <span>&gt;</span>
             <span>Contact</span>
           </div>
           <h1>Contact Us</h1>
         </div>
       </header>
+
       {/* Main contact-section */}
       <section className="contact-section">
         <div className="section-heading">
           <span className="subtitle">Contact Us</span>
           <h2>Get In Touch With Our Hospital</h2>
           <p>
-            We are here to help you. Contact our hospital for
-            appointments,inquires, and other healthcare servives.
+            We are here to help you. Contact our hospital for appointments,
+            inquires, and other healthcare services.
           </p>
         </div>
+
         {/* Contact-cards */}
         <div className="contact-cards">
           <div className="contact-card dark-card">
-            <i className="fa-solid fa-location-dot"></i>
             <h3>Our Location</h3>
             <p>Owerri, Nigeria</p>
           </div>
 
           <div className="contact-card">
-            <i className="fa-solid fa-phone"></i>
             <h3>Cell Number</h3>
             <p>+234 0908765678</p>
           </div>
 
-          <div className="contact-card dark card">
-            <i className="fa-regular fa-envelop"></i>
+          <div className="contact-card dark-card">
             <h3>Email Us</h3>
             <p>info@medqueue.com</p>
           </div>
+
           <div className="contact-card">
-            <i className="fa-regular fa-clock"></i>
             <h3>Working Hours</h3>
             <p>Mon - Sat: 8 AM - 5 PM</p>
           </div>
         </div>
 
-        {/* map and contact form */}
+        {/* Map and contact form */}
         <div className="contact-bottom">
           <div className="map-container">
             <iframe
@@ -70,41 +109,41 @@ const ContactUs = () => {
           </div>
 
           <div className="form-container">
-            <form
-              onSubmit={(event) => {
-                event.preventDefault();
-                alert("Thank you! Your message has been received.");
-              }}
-            >
+            {successMessage && (
+              <p className="success-message">{successMessage}</p>
+            )}
+            <form onSubmit={handleSubmit}>
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name"
-                aria-label="Your Name"
+                value={formData.name}
+                onChange={handleChange}
                 required
               />
               <input
                 type="email"
                 name="email"
                 placeholder="Your Email"
-                aria-label="Your Email"
+                value={formData.email}
+                onChange={handleChange}
                 required
               />
               <input
                 type="text"
                 name="subject"
-                placeholder="Your Subject"
-                aria-label="Your Subject"
+                placeholder="Subject"
+                value={formData.subject}
+                onChange={handleChange}
                 required
               />
-
               <textarea
                 name="message"
                 placeholder="Your Message"
-                aria-label="Your Message"
+                value={formData.message}
+                onChange={handleChange}
                 required
               ></textarea>
-
               <button type="submit">SEND MESSAGE</button>
             </form>
           </div>
@@ -112,6 +151,6 @@ const ContactUs = () => {
       </section>
     </div>
   );
-};
+}
 
 export default ContactUs;
