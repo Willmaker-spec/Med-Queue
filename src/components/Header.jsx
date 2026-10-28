@@ -10,7 +10,7 @@ function Header({ accountLabel = "Sign up" }) {
           <NavLink to="/" end>Home</NavLink>
           <NavLink to="/clinics">Clinics</NavLink>
           <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <Link to="/contact">Contact</Link>
         </nav>
         <div className="nav-actions">
           <Link className="btn btn-outline" to="/login">Log in</Link>

@@ -7,7 +7,7 @@ import ClinicDetails from "./pages/ClinicDetails";
 import JoinQueue from "./pages/JoinQueue";
 import PatientDashboard from "./pages/PatientDashboard";
 import StaffDashboard from "./pages/StaffDashboard";
-import ContactUS from "./pages/ContactUs";
+import ContactUs from "./pages/ContactUs";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import { getCurrentUser } from "./utils/demoAuth";
@@ -32,7 +32,7 @@ function App() {
         }
       />
       <Route path="/staff-dashboard" element={<StaffDashboard />} />
-      <Route path="/contact" element={<ContactUS />} />
+      <Route path="/contact" element={<ContactUs />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/privacy" element={<Privacy />} />

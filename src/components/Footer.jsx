@@ -11,7 +11,7 @@ function Footer({ children = "© 2025 MedQueue. Care, without the wait.", classN
         <div className="footer-links">
           <Link to="/privacy">Privacy</Link>
           <Link to="/help">Help centre</Link>
-          <a href="#contact">Contact</a>
+          <Link to="/contact">Contact</Link>
         </div>
       </div>
     </footer>
