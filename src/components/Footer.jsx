@@ -1,7 +1,20 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import Brand from "./Brand";
 
-const Footer = () => {
-  return <div></div>;
-};
+function Footer({ children = "© 2025 MedQueue. Care, without the wait.", className = "" }) {
+  return (
+    <footer className={`footer ${className}`}>
+      <div className="shell footer-inner">
+        <Brand />
+        <span>{children}</span>
+        <div className="footer-links">
+          <Link to="/privacy">Privacy</Link>
+          <Link to="/help">Help centre</Link>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+  );
+}
 
 export default Footer;

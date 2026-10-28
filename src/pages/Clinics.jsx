@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Footer, Header } from "../components/MedQueueLayout";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import { clinicDirectory } from "../data/medqueueClinics";
 
 const departments = ["All care", "General Medicine", "Dental Care", "Women's Health", "Pediatrics", "Cardiology"];

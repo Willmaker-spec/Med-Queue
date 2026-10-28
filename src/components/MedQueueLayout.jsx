@@ -71,6 +71,8 @@ export function Footer({
     </footer>
   );
 }
+import { Link } from "react-router-dom";
+import Brand from "./Brand";
 
 const patientLinks = [
   ["▦", "Dashboard", "/patient-dashboard"],
@@ -131,6 +133,8 @@ export function DashboardSidebar({ role, active }) {
           <a className="text-link" href="#help">
             {isStaff ? "Contact support" : "Visit help centre"} →
           </a>
+          <p>{isStaff ? "Get help with queue tools and your clinic workspace." : "Our care team is here to help with your visits."}</p>
+          <Link className="text-link" to="/help">{isStaff ? "Contact support" : "Visit help centre"} →</Link>
         </div>
       </div>
     </aside>

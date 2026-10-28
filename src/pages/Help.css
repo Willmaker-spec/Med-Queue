@@ -1,0 +1,179 @@
+/* Main help page */
+.help-page {
+  min-height: 100vh;
+  background-color: #f5f7f6;
+  padding: 50px 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.help-container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/* Page heading */
+.help-heading {
+  margin-bottom: 35px;
+}
+
+.help-label {
+  color: #07845e;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.help-heading h1 {
+  color: #18352b;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0 0 12px;
+}
+
+.help-description {
+  color: #64736b;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* FAQ list */
+.help-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.help-faq-item {
+  background-color: #ffffff;
+  border: 1px solid #e0e7e3;
+  border-radius: 10px;
+  padding: 22px 24px;
+}
+
+.help-faq-item h2 {
+  color: #258875;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.help-faq-item p {
+  color: #66746c;
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 0;
+  background-color:#f7f8f8
+ }
+
+ /* Hover effect */
+.help-faq-item:hover {
+  background-color: #e9f5ef;
+  border-left: 4px solid #07845e;
+  border-color: #c5e3d4;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(7, 132, 94, 0.12);
+}
+
+.help-faq-item:hover h2 {
+  color: #07845e;
+}
+
+/* Still Need Help section */
+.still-need-help {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 35px;
+  padding: 35px 40px;
+  background-color: #e9f5ef;
+  border-radius: 12px;
+}
+
+.still-need-help-text {
+  max-width: 650px;
+}
+
+.still-need-help-text h2 {
+  color:  #258875 ;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.still-need-help-text p {
+  color: #6b8175;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Contact Us button */
+.help-contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 15px 25px;
+  background-color: #078b83;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 7px;
+  transition: background-color 0.3s ease;
+}
+
+.help-contact-button:hover {
+  background-color: #066f69;
+}
+
+/* Tablet and mobile responsiveness */
+@media (max-width: 768px) {
+  .help-page {
+    padding: 30px 16px;
+  }
+
+  .help-heading h1 {
+    font-size: 29px;
+  }
+
+  .help-faq-item {
+    padding: 20px;
+  }
+
+  .still-need-help {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+    gap: 22px;
+  }
+
+  .still-need-help-text h2 {
+    font-size: 22px;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+  .help-heading h1 {
+    font-size: 26px;
+  }
+
+  .help-faq-item h2 {
+    font-size: 16px;
+  }
+
+  .help-faq-item p {
+    font-size: 14px;
+  }
+
+  .still-need-help {
+    padding: 25px 20px;
+  }
+}

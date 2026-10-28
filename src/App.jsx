@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-
+import Privacy from "./pages/Privacy";
+import Help from "./pages/Help";
 import Home from "./pages/Home";
 import Clinics from "./pages/Clinics";
 import ClinicDetails from "./pages/ClinicDetails";
@@ -7,6 +8,8 @@ import JoinQueue from "./pages/JoinQueue";
 import PatientDashboard from "./pages/PatientDashboard";
 import StaffDashboard from "./pages/StaffDashboard";
 import ContactUS from "./pages/ContactUs";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
@@ -18,6 +21,10 @@ function App() {
       <Route path="/patient-dashboard" element={<PatientDashboard />} />
       <Route path="/staff-dashboard" element={<StaffDashboard />} />
       <Route path="/contact" element={<ContactUS />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/privacy" element={<Privacy />} />
+      <Route path="/help" element={<Help />} />
     </Routes>
   );
 }
