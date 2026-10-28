@@ -1,7 +1,7 @@
-import React from "react";
+import Footer from "../components/Footer";
 
 const QueueStatus = () => {
-  return <div></div>;
+  return <Footer />;
 };
 
 export default QueueStatus;

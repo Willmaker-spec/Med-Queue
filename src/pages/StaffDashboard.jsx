@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Footer from "../components/Footer";
 import { DashboardSidebar } from "../components/MedQueueLayout";
 
 const initialPatients = [
@@ -53,7 +54,7 @@ function StaffDashboard() {
           </div>
         </main>
       </div>
-      <footer className="dash-footer">© 2025 MedQueue · Staff workspace <span className="footer-tail">Privacy · Support · Contact</span></footer>
+      <Footer>© 2025 MedQueue · Staff workspace.</Footer>
     </>
   );
 }

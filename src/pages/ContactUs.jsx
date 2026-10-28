@@ -1,7 +1,7 @@
-import React from "react";
+import Footer from "../components/Footer";
 
 const ContactUs = () => {
-  return <div></div>;
+  return <Footer />;
 };
 
 export default ContactUs;

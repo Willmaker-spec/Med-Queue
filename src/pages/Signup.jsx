@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Box,
   Button,
@@ -8,98 +8,50 @@ import {
   Typography,
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 import medQueueMark from "../assets/logo/medqueue-mark.svg";
-// import axios from "axios";
+import { registerDemoAccount } from "../utils/demoAuth";
 
-
-export default function Signup  ()  {
+export default function Signup() {
   const navigate = useNavigate();
-// State for form data
-const [firstName, setFirstName] = useState("");
-const [lastName, setLastName] = useState("");
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-const [phoneNumber, setPhoneNumber] = useState("");
-const [address, setAddress] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [address, setAddress] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-//  message state for form submission feedback
-const [message, setMessage] = useState("");
-const [error, setError] = useState("");
-// loading state for form submission
-const [loading, setLoading] = useState("");
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setMessage("");
+    setError("");
 
-// handle form submission
-const handleSubmit = async (event) => {
+    if (!firstName.trim() || !lastName.trim() || !email.trim() || !password) {
+      setError("Please complete all required fields.");
+      return;
+    }
+
+    setLoading(true);
     try {
-      event.preventDefault();
-      //clear previous message
-      setMessage("");
-      setLoading(true);
-      setError("");
-      //validate form data
-      if (!firstName.trim()) {
-        setError("First name is required");
-        setLoading(false);
-        return;
-      }
-      if (!lastName.trim()) {
-        setError("Last name is required");
-        setLoading(false);
-        return;
-      }
-      if (!email.trim()) {
-        setError("Email is required");
-        setLoading(false);
-        return;
-      }
-      if (!password.trim()) {
-        setError("Password is required");
-        setLoading(false);
-        return;
-      }
-      let payload = {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        password: password,
-        phoneNumber: phoneNumber,
-        address: address,
-      };
-      console.log(payload);
-      // send data to backend API
-      const res = await axios.post(
-        "https://students-learning-api.onrender.com/api/auth",
-        payload,
+      await registerDemoAccount(
+        { firstName, lastName, email, phoneNumber, address },
+        password,
       );
-      console.log(res);
-      //success message
-      setMessage("Account created successfully!");
-      setLoading(false);
-      navigate("/")
-      //clear form fields
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setPassword("");
-      setPhoneNumber("");
-      setAddress("");
-    } catch (error) {
-      console.error(error);
-      setError("An error occurred while creating the account.");
+      navigate("/patient-dashboard", { replace: true });
+    } catch (signupError) {
+      setError(signupError.message || "Unable to create the demo account.");
+    } finally {
       setLoading(false);
     }
-    // handle backend errors
-    if (error.response && error.response.data && error.response.data.message) {
-      setError(error.response.data.message);
-    } else {
-      setError("An error occurred while creating the account.");
-    }
-    setLoading(false);
   };
 
 
   return (
-    <Grid container component="main" sx={{ minHeight: "100vh" }}>
+    <>
+      <Grid container component="main" sx={{ minHeight: "100vh" }}>
       <CssBaseline />
 
       {/* LEFT SIDE */}
@@ -194,7 +146,7 @@ const handleSubmit = async (event) => {
             color="text.secondary"
             sx={{ mb: 4 }}
           >
-            Register to access your patient portal account.
+            Create one browser-only demo account. Do not use real patient information or passwords.
           </Typography>
          {/* success message */}
          {message && (
@@ -220,7 +172,6 @@ const handleSubmit = async (event) => {
           <Box
             component="form"
             onSubmit={handleSubmit}
-            noValidate
             sx={{
               "& .MuiOutlinedInput-root": {
                 "& fieldset": { borderColor: "#e5ecea" },
@@ -345,6 +296,8 @@ const handleSubmit = async (event) => {
           </Box>
         </Box>
       </Grid>
-    </Grid>
+      </Grid>
+      <Footer />
+    </>
   );
 }

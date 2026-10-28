@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { clinicDirectory } from "../data/medqueueClinics";
 
-const departments = ["All care", "General Medicine", "Dental Care", "Women's Health", "Pediatrics", "Cardiology"];
+const departments = ["All care", "General Medicine", "Dental Care", "Women's Health", "Pediatrics", "Cardiology", "Family Health"];
 
 function Clinics() {
   const [query, setQuery] = useState("");
@@ -38,7 +38,7 @@ function Clinics() {
             <option>All care</option>{departments.slice(1).map((item) => <option key={item}>{item}</option>)}
           </select>
           <select className="select-field" aria-label="Location" value={location} onChange={(event) => setLocation(event.target.value)}>
-            {["Any location", "Central District", "Midtown", "Metro Centre", "Riverside"].map((item) => <option key={item}>{item}</option>)}
+            {["Any location", "Central District", "Midtown", "Metro Centre", "Riverside", "Northside", "Eastside"].map((item) => <option key={item}>{item}</option>)}
           </select>
           <button className="btn btn-primary" type="submit">Search clinics</button>
         </form>

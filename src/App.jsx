@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Navigate, Routes, Route } from "react-router-dom";
 import Privacy from "./pages/Privacy";
 import Help from "./pages/Help";
 import Home from "./pages/Home";
@@ -9,6 +9,11 @@ import PatientDashboard from "./pages/PatientDashboard";
 import StaffDashboard from "./pages/StaffDashboard";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import { getCurrentUser } from "./utils/demoAuth";
+
+function RequirePatientAuth({ children }) {
+  return getCurrentUser() ? children : <Navigate to="/login" replace />;
+}
 
 function App() {
   return (
@@ -17,7 +22,14 @@ function App() {
       <Route path="/clinics" element={<Clinics />} />
       <Route path="/clinics/:id" element={<ClinicDetails />} />
       <Route path="/queue" element={<JoinQueue />} />
-      <Route path="/patient-dashboard" element={<PatientDashboard />} />
+      <Route
+        path="/patient-dashboard"
+        element={
+          <RequirePatientAuth>
+            <PatientDashboard />
+          </RequirePatientAuth>
+        }
+      />
       <Route path="/staff-dashboard" element={<StaffDashboard />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />

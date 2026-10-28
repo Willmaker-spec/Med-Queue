@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 import { DashboardSidebar } from "../components/MedQueueLayout";
+import { getCurrentUser } from "../utils/demoAuth";
 
 function PatientDashboard() {
+  const user = getCurrentUser();
+  const fullName = `${user.firstName} ${user.lastName}`;
+  const initials = `${user.firstName[0]}${user.lastName[0]}`.toUpperCase();
+
   return (
     <>
       <div className="dashboard-wrap">
         <DashboardSidebar role="patient" active="Dashboard" />
         <main className="dash-main">
           <div className="dash-top">
-            <div><h1>Good morning, Jane Doe</h1><p>Here's your care at a glance. Take it one step at a time.</p></div>
-            <div className="user-menu"><span className="avatar avatar-lg">JD</span><span><strong>Jane Doe</strong><small>Patient account</small></span><span className="muted">⌄</span></div>
+            <div><h1>Good morning, {user.firstName}</h1><p>Here's your care at a glance. Take it one step at a time.</p></div>
+            <div className="user-menu"><span className="avatar avatar-lg">{initials}</span><span><strong>{fullName}</strong><small>Patient account</small></span><span className="muted">⌄</span></div>
           </div>
           <div className="patient-grid">
             <section className="card panel queue-current">
@@ -37,7 +43,7 @@ function PatientDashboard() {
           </section>
         </main>
       </div>
-      <footer className="dash-footer">© 2025 MedQueue · Your care, at your pace. <span className="footer-tail">Privacy · Help centre · Contact</span></footer>
+      <Footer>© 2025 MedQueue · Your care, at your pace.</Footer>
     </>
   );
 }
