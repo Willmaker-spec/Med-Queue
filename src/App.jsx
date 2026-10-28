@@ -8,6 +8,8 @@ import ClinicDetails from "./pages/ClinicDetails";
 import JoinQueue from "./pages/JoinQueue";
 import PatientDashboard from "./pages/PatientDashboard";
 import StaffDashboard from "./pages/StaffDashboard";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
@@ -18,9 +20,9 @@ function App() {
       <Route path="/queue" element={<JoinQueue />} />
       <Route path="/patient-dashboard" element={<PatientDashboard />} />
       <Route path="/staff-dashboard" element={<StaffDashboard />} />
-      <Route path="/Privacy" element={<Privacy />} />
-     <Route path="/Help" element={<Help />} />
-
+      <Route path="/Login" element={<Login />} />
+      <Route path="/Signup" element={<Signup />} />
+      
     </Routes>
   );
    }
