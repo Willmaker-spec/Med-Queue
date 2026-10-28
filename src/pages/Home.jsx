@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Footer, Header } from "../components/MedQueueLayout";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import { clinicDirectory } from "../data/medqueueClinics";
 
 function Home() {

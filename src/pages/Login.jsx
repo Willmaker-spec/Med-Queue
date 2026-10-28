@@ -10,6 +10,7 @@ import {
   Typography 
 } from '@mui/material';
 import { Link,useNavigate } from 'react-router-dom';
+import medQueueMark from "../assets/logo/medqueue-mark.svg";
 // import axios from 'axios';
 
  
@@ -90,11 +91,10 @@ export default function Login () {
         sm={4}
         md={7}
         sx={{
-          backgroundImage: 'url(https://unsplash.com)',
-          backgroundRepeat: 'no-repeat',
-          backgroundColor: '#111',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          position: 'relative',
+          overflow: 'hidden',
+          minHeight: 480,
+          background: 'linear-gradient(145deg, #066d5c 0%, #07866f 100%)',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
@@ -102,7 +102,23 @@ export default function Login () {
           color: '#fff',
         }}
       >
-        <Typography variant="h3" component="h1" sx={{ fontWeight: 900, letterSpacing: '-0.05em', mb: 1 }}>
+        <Box
+          component="img"
+          src={medQueueMark}
+          alt=""
+          aria-hidden="true"
+          sx={{
+            position: 'absolute',
+            width: 300,
+            height: 300,
+            top: 20,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            opacity: 0.65,
+            pointerEvents: 'none',
+          }}
+        />
+        <Typography variant="h3" component="h1" sx={{ position: 'relative', color: '#fff', fontWeight: 900, letterSpacing: '-0.05em', mb: 1 }}>
           Med Queue.
         </Typography>
         <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.7)', letterSpacing: '0.05em' }}>
@@ -152,7 +168,18 @@ export default function Login () {
           )}
 
            
-          <Box component="form" onSubmit={handleLoginSubmit} noValidate>
+          <Box
+            component="form"
+            onSubmit={handleLoginSubmit}
+            noValidate
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                "& fieldset": { borderColor: "#e5ecea" },
+                "&:hover fieldset": { borderColor: "#07866f" },
+                "&.Mui-focused fieldset": { borderColor: "#07866f" },
+              },
+            }}
+          >
             <TextField
               margin="normal"
               required
@@ -168,13 +195,6 @@ export default function Login () {
               InputProps={{ sx: { borderRadius: 0 } }}
               InputLabelProps={{ sx: { letterSpacing: '0.1em', fontSize: '0.75rem' } }}
               variant="outlined"
-              sx={{
-                '& .MuiOutlinedInput-root': {
-                  '& fieldset': { borderColor: '#000', borderWidth: '1px' },
-                  '&:hover fieldset': { borderColor: '#000', borderWidth: '2px' },
-                  '&.Mui-focused fieldset': { borderColor: '#000', borderWidth: '2px' },
-                }
-              }}
             />
             <TextField
               margin="normal"
@@ -190,21 +210,14 @@ export default function Login () {
               InputProps={{ sx: { borderRadius: 0 } }}
               InputLabelProps={{ sx: { letterSpacing: '0.1em', fontSize: '0.75rem' } }}
               variant="outlined"
-              sx={{
-                '& .MuiOutlinedInput-root': {
-                  '& fieldset': { borderColor: '#000', borderWidth: '1px' },
-                  '&:hover fieldset': { borderColor: '#000', borderWidth: '2px' },
-                  '&.Mui-focused fieldset': { borderColor: '#000', borderWidth: '2px' },
-                }
-              }}
             />
             
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 2, mb: 3 }}>
               <FormControlLabel
-                control={<Checkbox value="remember" color="default" sx={{ '& .MuiSvgIcon-root': { borderRadius: 0 } }} />}
+                control={<Checkbox value="remember" sx={{ color: "#07866f", "&.Mui-checked": { color: "#07866f" } }} />}
                 label={<Typography variant="body2" sx={{ fontSize: '0.75rem', letterSpacing: '0.05em' }}>REMEMBER ME</Typography>}
               />
-              <Link href="#" variant="body2" color="inherit" sx={{ fontSize: '0.75rem', underline: 'always', letterSpacing: '0.05em' }}>
+              <Link href="#" style={{ color: "#07866f", fontSize: "0.75rem", letterSpacing: "0.05em" }}>
                 FORGOT PASSWORD?
               </Link>
             </Box>
@@ -217,14 +230,14 @@ export default function Login () {
                 mt: 1,
                 mb: 3,
                 py: 1.5,
-                backgroundColor: '#000',
+                backgroundColor: '#07866f',
                 color: '#fff',
                 borderRadius: 0,
                 fontWeight: 700,
                 letterSpacing: '0.1em',
                 boxShadow: 'none',
                 '&:hover': {
-                  backgroundColor: '#222',
+                  backgroundColor: '#066d5c',
                   boxShadow: 'none',
                 },
               }}
@@ -234,7 +247,7 @@ export default function Login () {
 
             <Typography variant="body2" align="center" color="text.secondary" sx={{ fontSize: '0.75rem' }}>
               {'DON\'T HAVE AN ACCOUNT? '}
-              <Link to="/signup" color="inherit" sx={{ fontWeight: 700 }}>
+              <Link to="/signup" style={{ color: "#07866f", fontWeight: 700 }}>
                 REGISTER
               </Link>
             </Typography>
@@ -245,4 +258,3 @@ export default function Login () {
   );
 
 }
-

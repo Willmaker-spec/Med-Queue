@@ -1,54 +1,5 @@
-import { Link, NavLink } from "react-router-dom";
-
-function Brand() {
-  return (
-    <Link className="brand" to="/" aria-label="MedQueue home">
-      <span className="brand-mark">
-        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <path d="M16 27s-10-5.8-10-13a5.8 5.8 0 0 1 10-3.9A5.8 5.8 0 0 1 26 14c0 7.2-10 13-10 13Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-          <path d="M7 16h5l2-4 3.4 8 2.1-4H25" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </span>
-      <span>Med<span>Queue</span></span>
-    </Link>
-  );
-}
-
-export function Header({ accountLabel = "Sign up" }) {
-  return (
-    <header className="topbar">
-      <div className="shell topbar-inner">
-        <Brand />
-        <nav className="nav" aria-label="Main navigation">
-          <NavLink to="/" end>Home</NavLink>
-          <NavLink to="/clinics">Clinics</NavLink>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div className="nav-actions">
-          <Link className="btn btn-outline" to="/login">Log in</Link>
-          <Link className="btn btn-primary" to="/signup">{accountLabel} <span aria-hidden="true">→</span></Link>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-export function Footer({ children = "© 2025 MedQueue. Care, without the wait.", className = "" }) {
-  return (
-    <footer className={`footer ${className}`}>
-      <div className="shell footer-inner">
-        <Brand />
-        <span>{children}</span>
-        <div className="footer-links">
-          <Link to="/privacy">Privacy</Link>
-          <Link to="/help">Help centre</Link>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
-    </footer>
-  );
-}
+import { Link } from "react-router-dom";
+import Brand from "./Brand";
 
 const patientLinks = [
   ["▦", "Dashboard", "/patient-dashboard"],

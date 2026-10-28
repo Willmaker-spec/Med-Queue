@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import "./Help.css";
 
 const faqs = [
@@ -36,44 +38,48 @@ const faqs = [
 
 function Help() {
   return (
-    <main className="help-page">
-      <div className="help-container">
-        <div className="help-heading">
-          <p className="help-label">HELP CENTER</p>
+    <>
+      <Header />
+      <main className="help-page">
+        <div className="help-container">
+          <div className="help-heading">
+            <p className="help-label">HELP CENTER</p>
 
-          <h1>Frequently Asked Questions</h1>
+            <h1>Frequently Asked Questions</h1>
 
-          <p className="help-description">
-            Find answers to common questions about using MedQueue.
-          </p>
-        </div>
-
-        <section className="help-faq-list">
-          {faqs.map((faq, index) => (
-            <article className="help-faq-item" key={index}>
-              <h2>{faq.question}</h2>
-
-              <p>{faq.answer}</p>
-            </article>
-          ))}
-        </section>
-
-        <section className="still-need-help">
-          <div className="still-need-help-text">
-            <h2>Still Need Help?</h2>
-
-            <p>
-              Couldn't find the answer you were looking for? Reach out to our
-              team for further assistance.
+            <p className="help-description">
+              Find answers to common questions about using MedQueue.
             </p>
           </div>
 
-          <Link to="/contact" className="help-contact-button">
-            Contact Us
-          </Link>
-        </section>
-      </div>
-    </main>
+          <section className="help-faq-list">
+            {faqs.map((faq, index) => (
+              <article className="help-faq-item" key={index}>
+                <h2>{faq.question}</h2>
+
+                <p>{faq.answer}</p>
+              </article>
+            ))}
+          </section>
+
+          <section className="still-need-help">
+            <div className="still-need-help-text">
+              <h2>Still Need Help?</h2>
+
+              <p>
+                Couldn't find the answer you were looking for? Reach out to our
+                team for further assistance.
+              </p>
+            </div>
+
+            <Link to="/contact" className="help-contact-button">
+              Contact Us
+            </Link>
+          </section>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }
 

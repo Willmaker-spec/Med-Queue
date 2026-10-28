@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import "./Privacy.css";
 
 
 function Privacy() {
   return (
     <div className="privacy-page">
+      <Header />
       <main className="privacy-container">
 
         {/* Privacy Introduction */}
@@ -259,6 +262,7 @@ function Privacy() {
         </section>
 
       </main>
+      <Footer />
     </div>
   );
 }

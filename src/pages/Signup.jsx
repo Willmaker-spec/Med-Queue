@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import medQueueMark from "../assets/logo/medqueue-mark.svg";
 // import axios from "axios";
 
 
@@ -108,12 +109,10 @@ const handleSubmit = async (event) => {
         sm={4}
         md={7}
         sx={{
-          backgroundImage:
-            "url()",
-          backgroundRepeat: "no-repeat",
-          backgroundColor: "#111",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          position: "relative",
+          overflow: "hidden",
+          minHeight: 480,
+          background: "linear-gradient(145deg, #066d5c 0%, #07866f 100%)",
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-end",
@@ -121,10 +120,28 @@ const handleSubmit = async (event) => {
           color: "#fff",
         }}
       >
+        <Box
+          component="img"
+          src={medQueueMark}
+          alt=""
+          aria-hidden="true"
+          sx={{
+            position: "absolute",
+            width: 300,
+            height: 300,
+            top: 20,
+            left: "50%",
+            transform: "translateX(-50%)",
+            opacity: 0.65,
+            pointerEvents: "none",
+          }}
+        />
         <Typography
           variant="h3"
           component="h1"
           sx={{
+            position: "relative",
+            color: "#fff",
             fontWeight: 900,
             letterSpacing: "-0.05em",
             mb: 1,
@@ -200,7 +217,18 @@ const handleSubmit = async (event) => {
             </Typography>
          )}
 
-          <Box component="form" onSubmit={handleSubmit} noValidate>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            noValidate
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                "& fieldset": { borderColor: "#e5ecea" },
+                "&:hover fieldset": { borderColor: "#07866f" },
+                "&.Mui-focused fieldset": { borderColor: "#07866f" },
+              },
+            }}
+          >
             <TextField
               margin="normal"
               required
@@ -287,14 +315,14 @@ const handleSubmit = async (event) => {
                 mt: 3,
                 mb: 3,
                 py: 1.5,
-                backgroundColor: "#000",
+                backgroundColor: "#07866f",
                 color: "#fff",
                 borderRadius: 0,
                 fontWeight: 700,
                 letterSpacing: "0.1em",
                 boxShadow: "none",
                 "&:hover": {
-                  backgroundColor: "#222",
+                  backgroundColor: "#066d5c",
                   boxShadow: "none",
                 },
               }}
@@ -310,7 +338,7 @@ const handleSubmit = async (event) => {
               sx={{ fontSize: "0.75rem" }}
             >
               ALREADY HAVE AN ACCOUNT?{" "}
-              <Link to="/login" color="inherit" sx={{ fontWeight: 700 }}>
+              <Link to="/login" style={{ color: "#07866f", fontWeight: 700 }}>
                 SIGN IN
               </Link>
             </Typography>
@@ -320,4 +348,3 @@ const handleSubmit = async (event) => {
     </Grid>
   );
 }
-
