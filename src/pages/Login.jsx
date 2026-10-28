@@ -234,7 +234,7 @@ export default function Login () {
 
             <Typography variant="body2" align="center" color="text.secondary" sx={{ fontSize: '0.75rem' }}>
               {'DON\'T HAVE AN ACCOUNT? '}
-              <Link to='/RegisterScreen' color="inherit" sx={{ fontWeight: 700 }}>
+              <Link to="/signup" color="inherit" sx={{ fontWeight: 700 }}>
                 REGISTER
               </Link>
             </Typography>
@@ -245,5 +245,4 @@ export default function Login () {
   );
 
 }
-
 

@@ -26,8 +26,8 @@ export function Header({ accountLabel = "Sign up" }) {
           <a href="#contact">Contact</a>
         </nav>
         <div className="nav-actions">
-          <Link className="btn btn-outline" to="/patient-dashboard">Log in</Link>
-          <Link className="btn btn-primary" to="/patient-dashboard">{accountLabel} <span aria-hidden="true">→</span></Link>
+          <Link className="btn btn-outline" to="/login">Log in</Link>
+          <Link className="btn btn-primary" to="/signup">{accountLabel} <span aria-hidden="true">→</span></Link>
         </div>
       </div>
     </header>
@@ -41,8 +41,8 @@ export function Footer({ children = "© 2025 MedQueue. Care, without the wait.",
         <Brand />
         <span>{children}</span>
         <div className="footer-links">
-          <a href="#privacy">Privacy</a>
-          <a href="#help">Help centre</a>
+          <Link to="/privacy">Privacy</Link>
+          <Link to="/help">Help centre</Link>
           <a href="#contact">Contact</a>
         </div>
       </div>
@@ -87,7 +87,7 @@ export function DashboardSidebar({ role, active }) {
         <div className="help-card">
           <strong>{isStaff ? "Staff support" : "Need a hand?"}</strong>
           <p>{isStaff ? "Get help with queue tools and your clinic workspace." : "Our care team is here to help with your visits."}</p>
-          <a className="text-link" href="#help">{isStaff ? "Contact support" : "Visit help centre"} →</a>
+          <Link className="text-link" to="/help">{isStaff ? "Contact support" : "Visit help centre"} →</Link>
         </div>
       </div>
     </aside>
