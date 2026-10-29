@@ -1,7 +1,6 @@
-import { Routes, Route } from "react-router-dom";
-import About from "./pages/About"
-import Testimonial from "./pages/Testimonial"
 import { Navigate, Routes, Route } from "react-router-dom";
+import About from "./pages/About";
+import Testimonial from "./pages/Testimonial";
 import Privacy from "./pages/Privacy";
 import Help from "./pages/Help";
 import Home from "./pages/Home";
@@ -25,8 +24,8 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/clinics" element={<Clinics />} />
       <Route path="/clinics/:id" element={<ClinicDetails />} />
-      <Route path="/About" element={<About />}/>
-      <Route path="/Testimonial" element={<Testimonial />}/>
+      <Route path="/about" element={<About />} />
+      <Route path="/testimonial" element={<Testimonial />} />
       <Route path="/queue" element={<JoinQueue />} />
       <Route
         path="/patient-dashboard"

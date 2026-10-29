@@ -9,7 +9,7 @@ function Header({ accountLabel = "Sign up" }) {
         <nav className="nav" aria-label="Main navigation">
           <NavLink to="/" end>Home</NavLink>
           <NavLink to="/clinics">Clinics</NavLink>
-          <a href="#about">About</a>
+          <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </nav>
         <div className="nav-actions">

@@ -3,7 +3,7 @@
   min-height: 180px;
   background:
     linear-gradient(rgba(5, 30, 57, 0.85), rgba(5, 30, 57, 0.85)),
-    url("../assets/desk.jpg");
+    url("../assets/images/desk.jpg");
   background-size: cover;
   background-position: center;
   display: flex;

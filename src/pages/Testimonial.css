@@ -1,19 +1,14 @@
-*{
-  padding: 0;
-  margin: 0;
-}
-
 /* Section Stylying */
-.testimonials{
+.testimonials {
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: grey;
   text-align: center;
 }
 
-.testimonials h4{
+.testimonials h4 {
   color: skyblue;
   font-size: 15px;
   letter-spacing: 2px;
@@ -37,7 +32,7 @@
 }
 
 /* FlexBox Container */
-.Testimonial-container {
+.testimonials .Testimonial-container {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
@@ -46,7 +41,7 @@
 }
 
 /* Card Styling */
-.card{
+.testimonials .card {
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -57,16 +52,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s, box shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box shadow 0.3s;
 }
 
-.card:hover{
+.testimonials .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 /* image style */
-.card img{
+.testimonials .card img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -76,7 +73,7 @@
 }
 
 /* Text style */
-.card p{
+.testimonials .card p {
   font-size: 14px;
   line-height: 1.6;
   color: grey;
@@ -85,7 +82,7 @@
 }
 
 /* text and button style*/
-.testimonial-text {
+.testimonials .testimonial-text {
   background-color: #f8f9fa;
   border-radius: 16px;
   padding: 40px 30px;
@@ -96,14 +93,14 @@
   margin-right: auto;
 }
 
-.testimonial-text h1 {
+.testimonials .testimonial-text h1 {
   font-size: 28px;
-  color:  rgb(34, 34, 34);
+  color: rgb(34, 34, 34);
   margin-bottom: 15px;
   text-align: center;
 }
 
-.testimonial-text > p:first-of-type {
+.testimonials .testimonial-text > p:first-of-type {
   font-size: 15px;
   line-height: 1.6;
   color: grey;
@@ -112,9 +109,9 @@
 }
 
 /* Style Button */
-.testimonial-text button {
+.testimonials .testimonial-text button {
   display: block;
-  background-color:  rgba(39, 39, 124, 0.767);
+  background-color: #07866f;
   color: #ffffff;
   border: none;
   padding: 12px 30px;
@@ -126,12 +123,12 @@
   transition: background-color 0.2s ease;
 }
 
-.testimonial-text button:hover {
-  background-color: rgba(39, 39, 124, 0.767);
+.testimonials .testimonial-text button:hover {
+  background-color: hsl(169, 50%, 50%);
 }
 
 /* List Styling */
-.testimonial-text h3 {
+.testimonials .testimonial-text h3 {
   font-size: 20px;
   font-weight: 600;
   color: rgb(34, 34, 34);
@@ -140,7 +137,7 @@
   text-align: left;
 }
 
-.testimonial-text p {
+.testimonials .testimonial-text p {
   font-size: 14px;
   color: grey;
   margin-bottom: 12px;
@@ -149,7 +146,7 @@
 }
 
 /* Custom bullet indicator for list items */
-.testimonial-text p::before {
+.testimonials .testimonial-text p::before {
   content: "✓";
   position: absolute;
   left: 0;

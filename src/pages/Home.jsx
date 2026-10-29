@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { clinicDirectory } from "../data/medqueueClinics";
+import Testimonial from "./Testimonial";
 
 function Home() {
   return (
@@ -54,6 +55,7 @@ function Home() {
             ))}
           </div>
         </section>
+        <Testimonial />
       </main>
       <Footer className="home-footer" />
     </>
