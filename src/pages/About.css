@@ -1,0 +1,186 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* background-color: rgba(35, 216, 11, 0.849); */
+}
+
+/* .about{
+    margin: 50px;
+    justify-content: center;
+}
+
+.about .about-us{
+    flex: 1;
+}
+
+.about-us h1{
+    text-align: center;
+    padding: 20px;
+    font-size: 35px;
+}
+
+.about-us p{
+    text-align: left;
+    font-size: 30px;
+    padding-left: 15px;
+}
+
+.about-two{
+    justify-content: center;
+}
+
+
+     */
+
+/* Base Variables & Reset */
+:root {
+  --primary-color: #0284c7;    /* Trusting healthcare blue */
+  --primary-dark: #0369a1;
+  --text-main: #334155;       /* Soft dark gray for readability */
+  --text-muted: #64748b;
+  --bg-light: #f8fafc;
+  --bg-white: #ffffff;
+  --border-color: #e2e8f0;
+  --radius: 8px;
+}
+
+.about, .about-two, .about-three, .about-four {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Typography Defaults */
+h1, h2, h3 {
+  color: #0f172a;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  color: var(--text-main);
+}
+
+/* SECTION 1: Who We Are (Hero Style) */
+.about {
+  background-color: var(--bg-light);
+  border-radius: var(--radius);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.about-us p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* SECTION 2: Our Purpose */
+.about-two {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.purpose {
+  max-width: 900px;
+}
+
+/* SECTION 3: How MedQueue Works (Ordered Step Cards) */
+.about-three {
+  background-color: white;
+}
+
+.works ol {
+  list-style: none;
+  counter-reset: steps-counter;
+  padding: 0;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+  gap: 1.5rem;
+  margin-top: 2px;
+}
+
+.works ol li {
+  background-color: var(--bg-light);
+  padding: 1.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.works ol li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+/* Stylized Numbering Icon */
+.works ol li::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: antiquewhite ;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.875px;
+  margin-bottom: 1px;
+}
+
+.works ol li strong {
+  display: block;
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+/* SECTION 4: Who We Serve (Two-Column Feature List) */
+.about-four {
+  background-color: var(--bg-light);
+  border-radius: var(--radius);
+}
+
+.service ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.service ul li {
+  background-color: var(--bg-white);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--primary-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.service ul li strong {
+  color: var(--primary-dark);
+  font-size: 1.1rem;
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about, .about-two, .about-three, .about-four {
+    padding: 2.5rem 1.25rem;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+}
