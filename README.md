@@ -14,6 +14,18 @@ A frontend-based virtual queue management platform that helps patients find clin
 - Clinic staff dashboard
 - Waiting-room display
 
+## Run locally
+
+Install dependencies and start the Vite development server from the repository root:
+
+```sh
+npm install
+npm run dev
+```
+
+The app screens are available at `/`, `/clinics`, `/clinics/:id`, `/queue`,
+`/patient-dashboard`, and `/staff-dashboard`.
+
 ## Tech Stack
 
 - React
@@ -32,8 +44,8 @@ A frontend-based virtual queue management platform that helps patients find clin
 
 ## Project Goal
 
-To demonstrate how a digital queue system can improve the patient experience by allowing users to monitor their position without physically standing in a queue.
+MedQueue helps patients monitor their place in a clinic queue without needing to wait in line.
 
 ## Disclaimer
 
-MedQueue is a frontend prototype created for educational purposes. It does not provide medical advice or connect to real hospital systems.
+MedQueue does not provide medical advice or connect to real hospital systems.

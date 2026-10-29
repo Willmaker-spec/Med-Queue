@@ -1,9 +1,23 @@
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/About"
 import Testimonial from "./pages/Testimonial"
+import { Navigate, Routes, Route } from "react-router-dom";
+import Privacy from "./pages/Privacy";
+import Help from "./pages/Help";
 import Home from "./pages/Home";
 import Clinics from "./pages/Clinics";
 import ClinicDetails from "./pages/ClinicDetails";
+import JoinQueue from "./pages/JoinQueue";
+import PatientDashboard from "./pages/PatientDashboard";
+import StaffDashboard from "./pages/StaffDashboard";
+import ContactUs from "./pages/ContactUs";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import { getCurrentUser } from "./utils/demoAuth";
+
+function RequirePatientAuth({ children }) {
+  return getCurrentUser() ? children : <Navigate to="/login" replace />;
+}
 
 function App() {
   return (
@@ -13,6 +27,21 @@ function App() {
       <Route path="/clinics/:id" element={<ClinicDetails />} />
       <Route path="/About" element={<About />}/>
       <Route path="/Testimonial" element={<Testimonial />}/>
+      <Route path="/queue" element={<JoinQueue />} />
+      <Route
+        path="/patient-dashboard"
+        element={
+          <RequirePatientAuth>
+            <PatientDashboard />
+          </RequirePatientAuth>
+        }
+      />
+      <Route path="/staff-dashboard" element={<StaffDashboard />} />
+      <Route path="/contact" element={<ContactUs />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/privacy" element={<Privacy />} />
+      <Route path="/help" element={<Help />} />
     </Routes>
   );
 }

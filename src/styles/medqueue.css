@@ -28,7 +28,7 @@ button { color: inherit; font: inherit; cursor: pointer; }
 .topbar-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--navy); font: 800 21px "Manrope", sans-serif; letter-spacing: -.8px; white-space: nowrap; }
 .brand-mark { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; color: #fff; background: var(--green); box-shadow: 0 5px 12px rgba(7,134,111,.2); }
-.brand-mark svg { width: 26px; height: 26px; }
+.brand-mark img { width: 26px; height: 26px; }
 .brand span span { color: var(--green); }
 .nav { display: flex; align-items: center; gap: 34px; color: #536570; font-size: 13px; font-weight: 600; }
 .nav a { transition: color .15s; }
@@ -57,10 +57,11 @@ h3 { font-size: 15px; margin-bottom: 5px; letter-spacing: -.15px; }
 .icon { width: 17px; height: 17px; display: inline-block; vertical-align: middle; }
 .footer { margin-top: 38px; border-top: 1px solid #eaf0ed; background: #f8fbfa; padding: 25px 0; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; color: var(--body); font-size: 11px; }
+.footer-location { font-style: normal; }
 .footer-links { display: flex; gap: 22px; font-weight: 600; }
 .footer .brand { font-size: 16px; }
 .footer .brand-mark { width: 30px; height: 30px; border-radius: 9px; }
-.footer .brand-mark svg { width: 21px; height: 21px; }
+.footer .brand-mark img { width: 21px; height: 21px; }
 .main-content { padding: 24px 0 0; }
 .page-title { margin-bottom: 6px; font-size: 32px; }
 .page-subtitle { color: var(--body); margin-bottom: 18px; font-size: 13px; }
@@ -187,7 +188,6 @@ h3 { font-size: 15px; margin-bottom: 5px; letter-spacing: -.15px; }
 .serving-num { padding: 12px; margin-top: 11px; border-radius: 9px; background: #f2f9f6; text-align: center; }
 .serving-num strong { display: block; color: var(--green); font: 800 24px "Manrope",sans-serif; }
 .serving-num span { color: var(--body); font-size: 10px; }
-.demo-note { display: flex; align-items: start; gap: 8px; padding: 10px 12px; border: 1px solid #f2e4c2; border-radius: 9px; background: #fffaf0; color: #906a2a; font-size: 10px; line-height: 1.45; }
 .queue-footer { margin-top: 27px; }
 
 /* Patient / staff dashboards */
@@ -340,8 +340,8 @@ h3 { font-size: 15px; margin-bottom: 5px; letter-spacing: -.15px; }
 .avatar-tone-pink { background: #f8e6ed; color: #a34d6c; }
 .avatar-tone-blue { background: #e2effb; color: #3d6f9d; }
 .footer-tail { float: right; }
-.mockup-clinic-detail { max-width: 760px; padding: 20px; margin: 22px auto; }
-.mockup-clinic-detail .detail-photo { height: 260px; margin: 0 0 20px; }
+.clinic-detail { max-width: 760px; padding: 20px; margin: 22px auto; }
+.clinic-detail .detail-photo { height: 260px; margin: 0 0 20px; }
 
 @media (max-width: 640px) {
   .queue-actions { align-items: stretch; flex-direction: column; }
@@ -349,6 +349,6 @@ h3 { font-size: 15px; margin-bottom: 5px; letter-spacing: -.15px; }
   .table-toolbar { flex-direction: column; }
   .table-toolbar .staff-tools { width: 100%; }
   .patient-search { flex: 1; }
-  .mockup-clinic-detail .detail-photo { height: 190px; }
+  .clinic-detail .detail-photo { height: 190px; }
   .footer-tail { float: none; display: block; margin-top: 5px; }
 }
