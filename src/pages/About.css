@@ -1,7 +1,7 @@
-*{
-    padding: 0;
-    margin: 0;
-    /* background-color: rgba(35, 216, 11, 0.849); */
+* {
+  padding: 0;
+  margin: 0;
+  /* background-color: rgba(35, 216, 11, 0.849); */
 }
 
 /* .about{
@@ -34,9 +34,9 @@
 
 /* Base Variables & Reset */
 :root {
-  --primary-color: #0284c7;    /* Trusting healthcare blue */
+  --primary-color: #0284c7; /* Trusting healthcare blue */
   --primary-dark: #0369a1;
-  --text-main: #334155;       /* Soft dark gray for readability */
+  --text-main: #334155; /* Soft dark gray for readability */
   --text-muted: #64748b;
   --bg-light: #f8fafc;
   --bg-white: #ffffff;
@@ -44,61 +44,88 @@
   --radius: 8px;
 }
 
-.about, .about-two, .about-three, .about-four {
+.about,
+.about-two,
+.about-three,
+.about-four {
   padding: 4rem 2rem;
   max-width: 1200px;
-  margin: 0 auto;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  box-sizing: border-box;
+  margin: 2rem auto;
+  background-color: var(--bg-light);
+  border-radius: var(--radius);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
   color: var(--text-main);
   line-height: 1.6;
 }
 
-/* Typography Defaults */
-h1, h2, h3 {
+.about h1,
+.about h2,
+.about h3,
+.about-two h1,
+.about-two h2,
+.about-two h3,
+.about-three h1,
+.about-three h2,
+.about-three h3,
+.about-four h1,
+.about-four h2,
+.about-four h3 {
   color: #0f172a;
   margin-bottom: 1rem;
   font-weight: 700;
+  text-align: center;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
+.about h1,
+.about-two h1,
+.about-three h1,
+.about-four h1 {
+  font-size: 2.5rem;
+}
 
-p {
+.about h2,
+.about-two h2,
+.about-three h2,
+.about-four h2 {
+  font-size: 2rem;
+}
+
+.about h3,
+.about-two h3,
+.about-three h3,
+.about-four h3 {
+  font-size: 1.75rem;
+}
+
+.about p,
+.about-two p,
+.about-three p,
+.about-four p {
   margin-bottom: 1.5rem;
   font-size: 1.125rem;
   color: var(--text-main);
-}
-
-/* SECTION 1: Who We Are (Hero Style) */
-.about {
-  background-color: var(--bg-light);
-  border-radius: var(--radius);
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.about-us p {
-  max-width: 800px;
-  margin: 0 auto;
   text-align: left;
 }
 
-/* SECTION 2: Our Purpose */
-.about-two {
-  border-bottom: 1px solid var(--border-color);
+.about-us,
+.purpose,
+.works,
+.service {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.purpose {
-  max-width: 900px;
-}
-
-/* SECTION 3: How MedQueue Works (Ordered Step Cards) */
-.about-three {
-  background-color: white;
-}
-
-.works ol {
+.works ul {
   list-style: none;
   counter-reset: steps-counter;
   padding: 0;
@@ -108,28 +135,30 @@ p {
   margin-top: 2px;
 }
 
-.works ol li {
+.works ul li {
   background-color: var(--bg-light);
   padding: 1.75rem;
   border-radius: var(--radius);
   border: 1px solid var(--border-color);
   position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.works ol li:hover {
+.works ul li:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
 }
 
 /* Stylized Numbering Icon */
-.works ol li::before {
+.works ul li::before {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 32px;
   height: 32px;
-  background-color: antiquewhite ;
+  background-color: antiquewhite;
   color: white;
   border-radius: 50%;
   font-weight: bold;
@@ -137,7 +166,7 @@ p {
   margin-bottom: 1px;
 }
 
-.works ol li strong {
+.works ul li strong {
   display: block;
   font-size: 1.25rem;
   color: #0f172a;
@@ -176,11 +205,31 @@ p {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .about, .about-two, .about-three, .about-four {
+  .about,
+  .about-two,
+  .about-three,
+  .about-four {
     padding: 2.5rem 1.25rem;
   }
-  
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.75rem; }
-  h3 { font-size: 1.5rem; }
+
+  .about h1,
+  .about-two h1,
+  .about-three h1,
+  .about-four h1 {
+    font-size: 2rem;
+  }
+
+  .about h2,
+  .about-two h2,
+  .about-three h2,
+  .about-four h2 {
+    font-size: 1.75rem;
+  }
+
+  .about h3,
+  .about-two h3,
+  .about-three h3,
+  .about-four h3 {
+    font-size: 1.5rem;
+  }
 }

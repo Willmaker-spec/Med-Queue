@@ -42,28 +42,27 @@ const About = () => {
         <div className="works">
           <h1>How Med Queue works</h1>
           <p>
-            <ul>
-              MedQueue is designed to make finding healthcare facilities
-              straightforward. <br />
-              1. Search for Clinics <br />
-              Patients visit the MedQueue website and search for clinics based
-              on their location, healthcare needs, or preferred facility. <br />
-              2. Explore Available Options <br />
-              Users browse relevant clinic listings and review the information
-              available, such as clinic <br /> names, locations, contact
-              details, opening hours, and services offered. <br />
-              3. Choose a Suitable Clinic <br />
-              Patients compare available options and select a clinic that best
-              matches their needs and circumstances. <br />
-              4. Contact or Visit the Clinic <br />
-              Users can use the available contact information or directions to
-              reach their preferred clinic. <br /> Where supported, they may
-              also access appointment-booking or other clinic services through
-              the website. 5. Access Healthcare with Greater Convenience <br />
-              By making clinic information easier to find, MedQueue helps users
-              take the next <br /> step towards obtaining the medical attention
-              they need.
-            </ul>
+            MedQueue is designed to make finding healthcare facilities
+            straightforward. <br />
+            1. Search for Clinics <br />
+            Patients visit the MedQueue website and search for clinics based on
+            their location, healthcare needs, or preferred facility. <br />
+            2. Explore Available Options <br />
+            Users browse relevant clinic listings and review the information
+            available, such as clinic names, locations, contact details, opening
+            hours, and services offered. <br />
+            3. Choose a Suitable Clinic <br />
+            Patients compare available options and select a clinic that best
+            matches their needs and circumstances. <br />
+            4. Contact or Visit the Clinic <br />
+            Users can use the available contact information or directions to
+            reach their preferred clinic. Where supported, they may also access
+            appointment-booking or other clinic services through the website.
+            <br />
+            5. Access Healthcare with Greater Convenience <br />
+            By making clinic information easier to find, MedQueue helps users
+            take the next step towards obtaining the medical attention they
+            need.
           </p>
         </div>
       </section>

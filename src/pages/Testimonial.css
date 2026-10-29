@@ -9,7 +9,7 @@
 }
 
 .testimonials h4 {
-  color: skyblue;
+  color: #07866f;
   font-size: 15px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -23,6 +23,7 @@
   max-width: 800px;
   margin: 0 auto 30px auto;
   color: grey;
+  text-align: left;
 }
 
 .testimonials h2 {
